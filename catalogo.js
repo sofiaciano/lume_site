@@ -228,7 +228,7 @@ const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character =>
 const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const icon = name => `<svg aria-hidden="true"><use href="imagens/icons.svg#${name}"></use></svg>`;
 const getBook = id => books.find(book => book.id === id);
-const defaultState = { cart: [], favorites: [], orders: [], reading: [], reviews: [], profile: { name: 'Ana', email: '' }, goal: 24, address: {}, payment: 'Pix', coupon: '' };
+const defaultState = { cart: [], favorites: [], orders: [], reading: [], reviews: [], profile: { name: 'Ana', email: '' }, goal: 24, address: {}, payment: 'Pix', installments: 1, coupon: '' };
 let state = loadState();
 let toastTimer;
 let reviewBookId;
@@ -274,7 +274,8 @@ function loadState(){
         restored.reviews = Array.isArray(saved.reviews) ? saved.reviews.filter(review => review && getBook(review.bookId) && Number.isInteger(review.rating) && review.rating >= 1 && review.rating <= 5 && typeof review.comment === 'string') : [];
         restored.profile = { name: typeof saved.profile?.name === 'string' ? saved.profile.name.slice(0, 60) : 'Ana', email: typeof saved.profile?.email === 'string' ? saved.profile.email.slice(0, 120) : '' };
         restored.address = saved.address && typeof saved.address === 'object' && !Array.isArray(saved.address) ? saved.address : {};
-        restored.payment = ['Pix', 'Cartão de crédito', 'Boleto bancário'].includes(saved.payment) ? saved.payment : 'Pix';
+        restored.payment = ['Pix', 'Cartão de débito', 'Cartão de crédito', 'Boleto bancário'].includes(saved.payment) ? saved.payment : 'Pix';
+        restored.installments = Number.isInteger(saved.installments) && saved.installments >= 1 && saved.installments <= 6 ? saved.installments : 1;
         restored.goal = Number.isInteger(saved.goal) && saved.goal >= 1 && saved.goal <= 365 ? saved.goal : 24;
         restored.coupon = ['BEMVINDO', 'LIVRO10'].includes(saved.coupon) ? saved.coupon : '';
         return restored;
