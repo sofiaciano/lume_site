@@ -1,0 +1,76 @@
+/* Lume: acabamento responsivo e tema adicional — preserva as regras originais de style.css */
+:root {
+  --wine: #5a233f;
+  --wine-hover: #43182e;
+}
+* { -webkit-tap-highlight-color: transparent; }
+:where(button,a,input,select,textarea):focus-visible { outline: 3px solid #d88aa6; outline-offset: 3px; }
+.credit-installments { display: none; padding: 18px 20px; margin: -4px 0 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--rose); }
+.credit-installments label { display: block; font-weight: 700; margin-bottom: 10px; }
+.credit-installments select { width: 100%; max-width: 100%; min-height: 46px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); color: var(--ink); }
+.credit-installments .field-hint { margin: 10px 0 0; }
+.payment-options:has(input[value="Cartão de crédito"]:checked) + .credit-installments { display: block; }
+.payment-options label { border-radius: 14px; transition: border-color .2s, background-color .2s, transform .2s; }
+.payment-options label:hover { border-color: #b46b87; }
+.payment-options label:has(input:checked) { background: #f6e1e3; border-color: #a25675; }
+.theme-toggle { position: relative; flex: 0 0 40px; min-width: 40px; min-height: 40px; display: inline-grid; place-items: center; font-size: 23px; color: var(--wine); border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
+.lume-theme-settings { border: 1px solid var(--line); border-radius: 20px; padding: 22px; margin: 18px 0 26px; background: var(--surface); }
+.lume-theme-settings h2 { font-family: var(--serif); font-size: 25px; margin: 0 0 6px; color: var(--wine); }
+.lume-theme-settings p { color: var(--muted); margin: 0 0 15px; font-size: 13px; }
+.lume-theme-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.lume-theme-options button { flex: 1; min-width: 88px; border: 1px solid var(--line); background: var(--rose); color: var(--ink); border-radius: 24px; padding: 12px 15px; cursor: pointer; font: inherit; }
+.lume-theme-options button[aria-pressed="true"] { color: #fff; background: #793554; border-color: #793554; }
+:root[data-theme="dark"] { color-scheme: dark; --paper:#1b121b; --surface:#2b1c2a; --rose:#362332; --rose-dark:#4b2c40; --wine:#f0b7cf; --wine-hover:#ffd1e2; --ink:#f9eaf0; --muted:#d4b4c5; --line:#63475a; --gold:#ffcc91; }
+:root[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+:root[data-theme="dark"] .site-header,
+:root[data-theme="dark"] .site-footer,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .book-card,
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] .bottom-nav,
+:root[data-theme="dark"] .search-form,
+:root[data-theme="dark"] .lume-theme-settings { background: var(--surface); color: var(--ink); border-color: var(--line); }
+:root[data-theme="dark"] .announcement { background: #4b2339; color: #fff3f9; }
+:root[data-theme="dark"] .book-image-link,
+:root[data-theme="dark"] .product-visual,
+:root[data-theme="dark"] .cart-item,
+:root[data-theme="dark"] .empty-state { background: #33212e; }
+:root[data-theme="dark"] .book-card h3 a, :root[data-theme="dark"] .cart-item h2 a { color: var(--ink); }
+:root[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+:root[data-theme="dark"] textarea, :root[data-theme="dark"] select { background: #362332; border-color: #755268; color: var(--ink); }
+:root[data-theme="dark"] input::placeholder, :root[data-theme="dark"] textarea::placeholder { color: #d0aebb; opacity: 1; }
+:root[data-theme="dark"] .button-primary, :root[data-theme="dark"] .quick-add, :root[data-theme="dark"] .coupon-form button { background: #813855; color: #fff9fc; }
+:root[data-theme="dark"] .button-primary:hover, :root[data-theme="dark"] .quick-add:hover { background: #a14c70; color: #fff; }
+:root[data-theme="dark"] .button-secondary, :root[data-theme="dark"] .button-ghost { border-color: #94657a; color: #f2c4d6; background: #34202c; }
+:root[data-theme="dark"] .payment-options label:has(input:checked) { background: #59324b; border-color: #e8a0bd; }
+:root[data-theme="dark"] .demo-notice { background: #402c34; color: #f4d6e3; border-color: #785467; }
+:root[data-theme="dark"] .credit-installments { background: #32212f; }
+:root[data-theme="dark"] .theme-toggle { color: #ffd0e0; background: #382333; }
+:root[data-theme="dark"] .confirmation-mark { color: #fff; background: #813855; }
+@media (min-width: 900px) {
+  .book-card { transition: transform .22s, box-shadow .22s; }
+  .book-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #54203614; }
+  .product-layout, .two-column { align-items: start; }
+}
+@media (max-width: 640px) {
+  .bottom-nav { background: var(--paper); border-top: 1px solid var(--line); padding-bottom: max(7px, env(safe-area-inset-bottom)); }
+  .bottom-nav a[data-mobile-nav="favoritos"] { display: none; }
+  .bottom-nav a { flex: 1 1 25%; min-width: 0; min-height: 54px; color: var(--wine); }
+  .bottom-nav a svg { width: 22px; height: 22px; }
+  .main-content { padding-bottom: calc(105px + env(safe-area-inset-bottom)); }
+  .header-actions { gap: 6px; }
+  .theme-toggle { flex-basis: 34px; min-width: 34px; min-height: 34px; font-size: 19px; }
+  .payment-options label { padding: 15px 13px; }
+  .form-actions { flex-wrap: wrap; }
+  .form-actions > .button { flex: 1 1 150px; text-align: center; }
+  .book-card, .panel { border-radius: 16px; }
+  .credit-installments { padding: 15px; }
+  .lume-theme-settings { padding: 17px; }
+}
+@media (max-width: 380px) {
+  .header-actions .profile-label { display: none; }
+  .bottom-nav a { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-card, .payment-options label { transition: none; }
+}
