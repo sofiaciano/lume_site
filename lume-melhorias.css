@@ -74,3 +74,95 @@
 @media (prefers-reduced-motion: reduce) {
   .book-card, .payment-options label { transition: none; }
 }
+
+/* Correções de contraste: elementos com fundo claro fixo no CSS original. */
+:root[data-theme="dark"] {
+  background: #1b121b;
+}
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] main,
+:root[data-theme="dark"] .main-content,
+:root[data-theme="dark"] .container {
+  color: var(--ink);
+}
+:root[data-theme="dark"] .site-header {
+  background: #241723;
+  border-bottom-color: var(--line);
+}
+:root[data-theme="dark"] .site-footer,
+:root[data-theme="dark"] .bottom-nav {
+  background: #241723;
+  border-color: var(--line);
+}
+:root[data-theme="dark"] :is(.book-image-link, .book-grid > li:nth-child(3n + 2) .book-image-link, .book-grid > li:nth-child(3n + 3) .book-image-link) {
+  background: #32202e;
+}
+:root[data-theme="dark"] :is(.book-card, .book-card h3, .book-card p, .book-card a, .book-price, .book-author, .book-rating) {
+  color: var(--ink);
+}
+:root[data-theme="dark"] .book-card .book-author,
+:root[data-theme="dark"] .book-card .book-rating {
+  color: var(--muted);
+}
+:root[data-theme="dark"] :is(.genre-icon, .genre-list a:hover, .favorite-button, .icon-button:hover, .tag, .hero-note, .address-summary, .free-shipping, .review-card, .stat-grid a, .source-table caption, .source-table th, .support-aside, .coupon, .notification-item, .filter-dialog, .search-form, .chip, .quantity-control) {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] .product-visual {
+  background: #33212e;
+}
+:root[data-theme="dark"] :is(.page-heading h1, .section-heading h2, .hero h1, .welcome-copy, .genre-section, .product-information h1, .order-summary h2, .panel h2, .panel h3, .footer-brand, .brand, .brand span) {
+  color: var(--ink);
+}
+:root[data-theme="dark"] :is(.page-heading p, .section-heading p, .field-hint, .results-count, .breadcrumb, .book-author, .hero-copy > p, .secure-note, .site-footer p, .site-footer small) {
+  color: var(--muted);
+}
+:root[data-theme="dark"] :is(.filter-dialog, dialog, .review-dialog) {
+  color: var(--ink);
+  background: var(--paper);
+}
+:root[data-theme="dark"] :is(.filter-dialog input, .filter-dialog select, dialog input, dialog textarea) {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] .payment-options label {
+  background: #30202d;
+  color: var(--ink);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] .payment-options label:hover {
+  background: #483046;
+}
+:root[data-theme="dark"] .payment-options label:has(input:checked) {
+  background: #5b344c;
+  border-color: #e7a5c1;
+}
+:root[data-theme="dark"] :is(.text-link, .bottom-nav a, .desktop-nav a, .header-actions a, .icon-button) {
+  color: var(--wine);
+}
+:root[data-theme="dark"] .favorite-button {
+  color: #f6b7d2;
+  background: #4a2b3b;
+}
+:root[data-theme="dark"] .favorite-button[aria-pressed="true"] {
+  color: #ffd0df;
+}
+:root[data-theme="dark"] :is(.chip, .chip a, .chip button) {
+  color: var(--ink);
+}
+:root[data-theme="dark"] .chip.active,
+:root[data-theme="dark"] .chip[aria-pressed="true"] {
+  color: white;
+  background: #783653;
+}
+:root[data-theme="dark"] :is(.source-table td, .source-table th) {
+  border-color: var(--line);
+}
+@media (max-width: 640px) {
+  :root[data-theme="dark"] .bottom-nav {
+    background: #241723;
+  }
+}
