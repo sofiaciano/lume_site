@@ -166,3 +166,189 @@
     background: #241723;
   }
 }
+
+
+/* Auditoria geral de superfícies do tema escuro — 2026-11-06 */
+/*
+  Regras somente sob data-theme="dark", de modo que a versão clara continua intacta.
+  Cor base: #1b121b (fundo), #2b1c2a (painéis), #362332 (campos),
+  #f5c6d9 (texto rosa claro). Evita cartões esbranquiçados no tema escuro.
+*/
+:root[data-theme="dark"] {
+  --dark-page: #1b121b;
+  --dark-panel: #2b1c2a;
+  --dark-panel-alt: #362332;
+  --dark-stroke: #684659;
+  --dark-foreground: #f9eaf0;
+  --dark-subtext: #d4b4c5;
+  --dark-highlight: #f5c6d9;
+}
+/* Carrinho, pagamento e etapas de confirmação */
+:root[data-theme="dark"] .free-shipping {
+  background: #3b2936;
+  color: #f2c7d9;
+  border: 1px solid #694459;
+}
+:root[data-theme="dark"] .free-shipping svg {
+  color: #f2c7d9;
+}
+:root[data-theme="dark"] .order-summary,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .address-summary,
+:root[data-theme="dark"] .cart-list,
+:root[data-theme="dark"] .review-card,
+:root[data-theme="dark"] .order-card,
+:root[data-theme="dark"] .account-details,
+:root[data-theme="dark"] .account-menu {
+  background: var(--dark-panel);
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .cart-item,
+:root[data-theme="dark"] .review-items .cart-item,
+:root[data-theme="dark"] .order-books,
+:root[data-theme="dark"] .reading-item {
+  background: transparent;
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .coupon-form input,
+:root[data-theme="dark"] .form-grid input,
+:root[data-theme="dark"] .account-form input,
+:root[data-theme="dark"] .form-grid textarea,
+:root[data-theme="dark"] .form-grid select,
+:root[data-theme="dark"] .credit-installments select {
+  background: var(--dark-panel-alt);
+  color: var(--dark-foreground);
+  border-color: #78546a;
+}
+:root[data-theme="dark"] .form-grid input:focus,
+:root[data-theme="dark"] .coupon-form input:focus {
+  border-color: #e6a5c1;
+}
+:root[data-theme="dark"] .credit-installments,
+:root[data-theme="dark"] .demo-notice {
+  background: #392735;
+  color: #f1d1df;
+  border-color: var(--dark-stroke);
+}
+/* Páginas inicial, catálogo e detalhes */
+:root[data-theme="dark"] .editorial-banner,
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] .hero-note,
+:root[data-theme="dark"] .stat-grid a,
+:root[data-theme="dark"] .genre-icon,
+:root[data-theme="dark"] .genre-list li:nth-child(2) .genre-icon,
+:root[data-theme="dark"] .genre-list li:nth-child(3) .genre-icon,
+:root[data-theme="dark"] .genre-list li:nth-child(4) .genre-icon,
+:root[data-theme="dark"] .book-grid > li:nth-child(3n + 2) .book-image-link,
+:root[data-theme="dark"] .book-grid > li:nth-child(3n + 3) .book-image-link {
+  background: var(--dark-panel-alt);
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .editorial-banner > svg,
+:root[data-theme="dark"] .editorial-banner p,
+:root[data-theme="dark"] .hero-copy > p,
+:root[data-theme="dark"] .stat-grid a,
+:root[data-theme="dark"] .coupon p {
+  color: var(--dark-subtext);
+}
+:root[data-theme="dark"] .product-visual {
+  background: radial-gradient(ellipse at center, #493146, #291a28);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .genre-list a,
+:root[data-theme="dark"] .book-card,
+:root[data-theme="dark"] .book-card a,
+:root[data-theme="dark"] .product-information,
+:root[data-theme="dark"] .product-information p {
+  color: var(--dark-foreground);
+}
+:root[data-theme="dark"] .genre-list a:hover,
+:root[data-theme="dark"] .tag,
+:root[data-theme="dark"] .favorite-button {
+  background: #482c3c;
+  color: var(--dark-highlight);
+  border-color: var(--dark-stroke);
+}
+/* Cupons, perfil, notificações, leitura, ajuda e referências */
+:root[data-theme="dark"] .coupon {
+  background: #382533;
+  border-color: #755065;
+  color: var(--dark-foreground);
+}
+:root[data-theme="dark"] .coupon::after {
+  border-right-color: #9f7388;
+}
+:root[data-theme="dark"] .coupon h2,
+:root[data-theme="dark"] .coupon strong {
+  color: var(--dark-highlight);
+}
+:root[data-theme="dark"] .notification-item,
+:root[data-theme="dark"] .support-aside,
+:root[data-theme="dark"] .reading-stats,
+:root[data-theme="dark"] .profile-card {
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .support-aside {
+  background: var(--dark-panel-alt);
+}
+:root[data-theme="dark"] .account-menu a {
+  border-bottom-color: var(--dark-stroke);
+  color: var(--dark-foreground);
+}
+:root[data-theme="dark"] .account-menu a:hover {
+  color: var(--dark-highlight);
+}
+:root[data-theme="dark"] .source-table caption,
+:root[data-theme="dark"] .source-table th {
+  background: #382533;
+  color: var(--dark-highlight);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .source-table td,
+:root[data-theme="dark"] .source-table-wrapper,
+:root[data-theme="dark"] .faq-list details {
+  background: var(--dark-panel);
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+/* Dialogs e filtros */
+:root[data-theme="dark"] dialog,
+:root[data-theme="dark"] .filter-dialog,
+:root[data-theme="dark"] .review-dialog {
+  background: var(--dark-page);
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .filter-genres span,
+:root[data-theme="dark"] .filter-formats span,
+:root[data-theme="dark"] .chip {
+  background: var(--dark-panel);
+  color: var(--dark-foreground);
+  border-color: var(--dark-stroke);
+}
+:root[data-theme="dark"] .filter-genres input:checked + span,
+:root[data-theme="dark"] .filter-formats input:checked + span,
+:root[data-theme="dark"] .chip.active,
+:root[data-theme="dark"] .chip:hover {
+  background: #823954;
+  color: #ffffff;
+  border-color: #b97c95;
+}
+/* Estados de interação: evitar rosa muito claro com texto branco */
+:root[data-theme="dark"] .steps li.active span {
+  background: #823954;
+  color: #ffffff;
+  border-color: #b97c95;
+}
+:root[data-theme="dark"] .button-primary,
+:root[data-theme="dark"] .quick-add {
+  background: #823954;
+  color: #ffffff;
+}
+:root[data-theme="dark"] .bottom-nav {
+  background: #241723;
+}
